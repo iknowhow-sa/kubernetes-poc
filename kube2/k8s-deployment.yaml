@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kube2
+  name: kube2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kube2
+    spec:
+      containers:
+      - image: kube2
+        name: kube2
+        ports:
+          - containerPort: 8081
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: local-kube
+        resources: {}
+status: {}

@@ -1,0 +1,17 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: kube-
+build:
+  artifacts:
+    - image: kube2
+      jib:
+        project: com.iknowhow.poc.kubernetes:kube2
+manifests:
+  rawYaml:
+    - k8s-*
+
+#deploy:
+#  kubectl:
+#    manifests:
+#      - k8s-*

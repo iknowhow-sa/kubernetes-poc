@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube2-service
+  labels:
+    name: kube2
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8081
+      protocol: TCP
+  selector:
+    app: kube2
+  type: LoadBalancer
