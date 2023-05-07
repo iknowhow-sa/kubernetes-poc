@@ -21,7 +21,7 @@ spec:
       - image: kube2
         name: kube2
         ports:
-          - containerPort: 8081
+          - containerPort: 8080
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: local-kube
