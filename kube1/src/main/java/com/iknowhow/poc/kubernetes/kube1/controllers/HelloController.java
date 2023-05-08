@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("kube1")
 public class HelloController {
@@ -15,7 +17,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public String getHello(){
-        return "Hello from kube1!";
+        return "Hello from kube1, on: " + Optional.ofNullable(System.getenv("HOSTNAME")).orElse("(unknown host)");
     }
 
     @GetMapping("greet")
